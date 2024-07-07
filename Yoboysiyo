@@ -1,0 +1,23 @@
+local Library = loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
+local Window = Library.CreateLib("SiomaiiScriptX Dupe", "BloodTheme")
+local Tab = Window:NewTab("Pet Dupe")
+local Section = Tab:NewSection("Dupe Now")
+Section:NewButton("Dupe Pet", "Dupe Pet", function()
+    local lib = require(game.ReplicatedStorage.Library)
+ 
+local fromPet = "Cat"
+local toPet = "Huge UV Kitsune"
+for i,v in pairs(lib.Directory.Pets[fromPet]) do
+  lib.Directory.Pets[fromPet][i] = nil
+local fromPet = "Cat"
+end
+for i,v in pairs(lib.Directory.Pets[toPet]) do
+  lib.Directory.Pets[fromPet][i] = v
+end
+
+local args = {
+    [1] = "50476b4e72284cd1a3a4daf42ee2f593"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Pets_Favorite"):FireServer(unpack(args))
+end)
